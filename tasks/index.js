@@ -1,0 +1,1 @@
+exports.geoConsumer = require("./geo-consumer")
