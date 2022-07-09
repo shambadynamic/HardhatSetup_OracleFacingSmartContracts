@@ -9,7 +9,7 @@ This project demonstrates a basic Hardhat setup for interaction with the Shamba 
 npm install
 ```
 
-### Configure the environment variables including ALCHEMY_POLYGON_URL, ACCOUNT_PRIVATE_KEY and POLYGONSCAN_API_KEY by creating a .env file 
+### Configure the environment variables including ALCHEMY_POLYGON_URL, ACCOUNT_PRIVATE_KEY and POLYGONSCAN_API_KEY by creating a .env file:
 
 > ALCHEMY_POLYGON_URL="Login into Alchemy and create an app using https://dashboard.alchemyapi.io/apps/ and copy the HTTPS url from the 'View Key' option"<br /><br />
 > ACCOUNT_PRIVATE_KEY="Export your Metamask Wallet private key"<br /><br />
