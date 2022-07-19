@@ -22,9 +22,29 @@ module.exports = {
             url: process.env.ALCHEMY_POLYGON_URL,
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
             chainId: 80001,
-        }
+        },
+        goerli: {
+            url: process.env.ALCHEMY_GOERLI_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 5,
+        },
+        rinkeby: {
+            url: process.env.INFURA_RINKEBY_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 4,
+        },
+        fuji: {
+            url: process.env.ALCHEMY_AVALANCHE_FUJI_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 43113,
+        },
+        arbitrum: {
+            url: process.env.ALCHEMY_ARBITRUM_RINKEBY_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 421611,
+        },
     },
     etherscan: {
-        apiKey: process.env.POLYGONSCAN_API_KEY
+        apiKey: process.env.ETHERSCAN_API_KEY
     }
 };

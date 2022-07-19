@@ -15,45 +15,177 @@ npm install
 > ACCOUNT_PRIVATE_KEY="Export your Metamask Wallet private key"<br /><br />
 > POLYGONSCAN_API_KEY="Login into https://polygonscan.com/login and generate API key"<br /><br />
 
+#### NOTE: If you're deploying the OracleFacing contracts on any network other than Polygon Mumbai, then you have to configure the ALCHEMY or INFURA HTTPS url as well as Block explorer API key corresponding to that particular network.
 
-### Deploy the contract by running the deploy.js script:
-
-```
-npx hardhat run scripts/deploy.js
-```
-
-### Verify and publish the contract on https://mumbai.polygonscan.com/:
+#### Here is the list of networks supported by Shamba Geospatial Oracle and their corresponding details:
 
 ```
-npx hardhat verify DEPLOYED_CONTRACT_ADDRESS --contract contracts/OracleFacingGeoConsumer.sol:OracleFacingGeoConsumer
+Operator_Number       Network           Mainnet Block Explorer for getting API key       Testnet Block Explorer for deployed contract
+
+    1              Arbitrum Rinkeby           https://arbiscan.io/myapikey                   https://testnet.arbiscan/io/                                 
+
+    2              Avalanche Fuji             https://snowtrace.io/myapikey                  https://testnet.snowtrace.io/
+
+    3              Ethereum Goerli            https://etherscan.io/myapikey                  https://goerli.etherscan.io/                          
+
+    4              Ethereum Rinkeby           https://etherscan.io/myapikey                  https://rinkeby.etherscan.io/
+
+    5              Polygon Mumbai             https://polygonscan.com/myapikey               https://mumbai.polygonscan.com/
 ```
 
-### Interact with the contract using the tasks defined in the tasks folder
+
+
+### Deploy and interact with the contract using the tasks defined in the tasks folder
+
+#### Deploy the contract on any of the five networks listed in the table above, using the corresponding contract name and operator_number parameters<br/>
+
+##### To deploy on Arbitrum Rinkeby network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 1 --network arbitrum
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 1 --network arbitrum
+```
+
+<br/><br/>
+
+##### To deploy on Avalanche Fuji network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 2 --network fuji
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 2 --network fuji
+```
+
+<br/><br/>
+
+##### To deploy on Ethereum Goerli network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 3 --network goerli
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 3 --network goerli
+```
+
+<br/><br/>
+
+##### To deploy on Ethereum Rinkeby network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 4 --network rinkeby
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 4 --network rinkeby
+```
+
+<br/><br/>
+
+##### To deploy on Polygon Mumbai network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 5 --network mumbai
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 5 --network mumbai
+```
+
+<br/><br/>
+
+
+> **NOTE**: In all the commands mentioned below, replace the **DEPLOYED_CONTRACT_ADDRESS**, **OPERATOR_NUMBER** and **NETWORK_NAME** placeholders with your corresponding deployed contract address, *operator_number* as mentioned in the table given above, and the name of the network flag on which your contract is deployed, respectively. 
+
+> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4* or *5* and the corresponding **NETWORK_NAME** can be *arbitrum*, *fuji*, *goerli*, *rinkeby* or *mumbai*, respectively.
+
+
+### Verify and publish the contract on the corresponding testnet block explorer depending upon the network on which your contract is being deployed (refer to the table given above for the urls of the block explorers):
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat verify DEPLOYED_CONTRACT_ADDRESS OPERATOR_NUMBER --contract contracts/OracleFacingGeoConsumer.sol:OracleFacingGeoConsumer --network NETWORK_NAME
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat verify DEPLOYED_CONTRACT_ADDRESS OPERATOR_NUMBER --contract contracts/OracleFacingFireConsumer.sol:OracleFacingFireConsumer --network NETWORK_NAME
+```
+
+
 
 #### Fund the deployed contract with 1 LINK per Oracle request: 
         
 ```
-npx hardhat fund --contract DEPLOYED_CONTRACT_ADDRESS --links 1
+npx hardhat fund --contract DEPLOYED_CONTRACT_ADDRESS --links 1 --network NETWORK_NAME
 ```
 
-#### Send the request to the Shamba Geospatial Oracle by passing the required 7 parameters:
+#### Send the request to the Shamba Geospatial Oracle by passing the required 7 parameters in case of OracleFacingGeoConsumer nad 6 parameters in case of OracleFacingFireConsumer:
 
 > **NOTE**: To learn about the parameters, you can check the Shamba Docs (https://docs.shamba.app/) and also interact with the Shamba Contracts Tool (https://contracts.shamba.app/).
 
-```
-npx hardhat sendRequest --contract DEPLOYED_CONTRACT_ADDRESS agg_mean COPERNICUS/S2_SR NDVI 250 2021-09-01 2021-09-10 "[[1,"[[[19.51171875,4.214943141390651],[18.28125,-4.740675384778361],[26.894531249999996,-4.565473550710278],[27.24609375,1.2303741774326145],[19.51171875,4.214943141390651]]]"]]"
-```
-
-
-#### Fetch the data returned by the Shamba Geospatial Oracle:
+###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat getLatestData --contract DEPLOYED_CONTRACT_ADDRESS
+npx hardhat sendRequestToGeostats --contract DEPLOYED_CONTRACT_ADDRESS agg_mean COPERNICUS/S2_SR NDVI 250 2021-09-01 2021-09-10 "[[1,"[[[19.51171875,4.214943141390651],[18.28125,-4.740675384778361],[26.894531249999996,-4.565473550710278],[27.24609375,1.2303741774326145],[19.51171875,4.214943141390651]]]"]]" --network NETWORK_NAME
+```
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat sendRequestToFire --contract DEPLOYED_CONTRACT_ADDRESS MODIS/006/MOD14A1 MaxFRP 1000 2021-09-01 2021-09-10 "[[1, "[[[29.53125,19.642587534013032],[29.53125,27.059125784374068],[39.90234375,27.059125784374068],[39.90234375,19.642587534013032],[29.53125,19.642587534013032]]]"], [2, "[[[46.72947724367683,4.390228926463396],[46.679357886244986,3.8826857905457652],[46.530925872748305,3.394358826483646],[46.28988536222383,2.9440946050840657],[45.965499406313945,2.5492840567467825],[45.57023397538652,2.2251800570298523],[45.11927889828469,1.9843023404026605],[44.62996412572296,1.8359528461951848],[44.12109374999999,1.7858585217968768],[43.61222337427702,1.8359528461951848],[43.122908601715295,1.9843023404026605],[42.67195352461347,2.2251800570298523],[42.27668809368605,2.5492840567467825],[41.95230213777616,2.9440946050840657],[41.71126162725168,3.394358826483646],[41.562829613755,3.8826857905457652],[41.51271025632316,4.390228926463396],[41.562829613755,4.8974271245416965],[41.71126162725168,5.3847719120817565],[41.95230213777616,5.833566543422026],[42.27668809368605,6.22664411740961],[42.67195352461348,6.549015711120945],[43.12290860171531,6.788425209793004],[43.612223374277036,6.9357938995827375],[44.12109375,6.9855438544859965],[44.629964125722964,6.9357938995827375],[45.119278898284705,6.788425209792991],[45.57023397538653,6.549015711120945],[45.965499406313945,6.226644117409597],[46.28988536222384,5.833566543422026],[46.53092587274831,5.384771912081744],[46.679357886244986,4.897427124541672],[46.72947724367683,4.390228926463396]]]"]]" --network NETWORK_NAME
 ```
 
+#### Fetch the latest data returned by the Shamba Geospatial Oracle
+
+###### OracleFacingGeoConsumer contract:
+
 ```
-npx hardhat getLatestCid --contract DEPLOYED_CONTRACT_ADDRESS
+npx hardhat getLatestDataForGeostats --contract DEPLOYED_CONTRACT_ADDRESS --network NETWORK_NAME
 ```
 
+###### OracleFacingFireConsumer contract:
 
+```
+npx hardhat getLatestDataForFire --contract DEPLOYED_CONTRACT_ADDRESS --network NETWORK_NAME
+```
 
+#### Fetch the latest metadata cid (content-id) returned by the Shamba Geospatial Oracle
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat getLatestCidForGeostats --contract DEPLOYED_CONTRACT_ADDRESS --network NETWORK_NAME
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat getLatestCidForFire --contract DEPLOYED_CONTRACT_ADDRESS --network NETWORK_NAME
+```

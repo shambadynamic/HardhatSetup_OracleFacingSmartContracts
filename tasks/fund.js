@@ -1,7 +1,7 @@
-const { networkConfig } = require("../../helper-hardhat-config")
+const { networkConfig } = require("../helper-hardhat-config")
 
-task("fund", "Sends LINK token(s) the ShambaGeoConsumer")
-    .addParam("contract", "The address of the OracleFacingGeoConsumer contract that you want to read")
+task("fund", "Sends LINK token(s) the contract")
+    .addParam("contract", "The address of the contract that you want to fund")
     .addOptionalParam("links", "Set the number of LINK tokens to be funded")
     .setAction(async(taskArgs) => {
         const contractAddr = taskArgs.contract

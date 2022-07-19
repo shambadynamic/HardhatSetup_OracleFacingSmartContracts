@@ -1,4 +1,4 @@
-task("getLatestData", "Gets the latest data from the ShambaGeoConsumer")
+task("getLatestDataForGeostats", "Gets the latest data from the ShambaGeoConsumer")
     .addParam("contract", "The address of the OracleFacingGeoConsumer contract that you want to read")
     .setAction(async(taskArgs) => {
         const contractAddr = taskArgs.contract
