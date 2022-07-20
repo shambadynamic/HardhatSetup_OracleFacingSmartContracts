@@ -33,9 +33,13 @@ Operator_Number       Network           Mainnet Block Explorer for getting API k
     5              Polygon Mumbai             https://polygonscan.com/myapikey               https://mumbai.polygonscan.com/
 ```
 
+### Compile the contracts
 
+```
+npx hardhat compile
+```
 
-### Deploy and interact with the contract using the tasks defined in the tasks folder
+### Deploy and interact with the contracts using the tasks defined in the tasks folder
 
 #### Deploy the contract on any of the five networks listed in the table above, using the corresponding contract name and operator_number parameters<br/>
 
