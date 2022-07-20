@@ -22,7 +22,7 @@ npm install
 ```
 Operator_Number       Network           Mainnet Block Explorer for getting API key       Testnet Block Explorer for deployed contract
 
-    1              Arbitrum Rinkeby           https://arbiscan.io/myapikey                   https://testnet.arbiscan/io/                                 
+    1              Arbitrum Rinkeby           https://arbiscan.io/myapikey                   https://testnet.arbiscan.io/                                 
 
     2              Avalanche Fuji             https://snowtrace.io/myapikey                  https://testnet.snowtrace.io/
 
