@@ -18,6 +18,10 @@ const networkConfig = {
     421611: {
         name: "arbitrum",
         linkToken: "0x615fBe6372676474d9e6933d310469c9b68e9726",
+    },
+    97: {
+        name: "testnet",
+        linkToken: "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06",
     }
 }
 

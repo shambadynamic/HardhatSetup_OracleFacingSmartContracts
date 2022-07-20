@@ -43,8 +43,13 @@ module.exports = {
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
             chainId: 421611,
         },
+        testnet: {
+            url: process.env.QUICKNODE_BNB_TESTNET_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 97,
+        }
     },
     etherscan: {
-        apiKey: process.env.ETHERSCAN_API_KEY
+        apiKey: process.env.BSCSCAN_API_KEY
     }
 };
