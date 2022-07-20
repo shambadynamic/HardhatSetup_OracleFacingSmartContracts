@@ -177,8 +177,10 @@ npx hardhat getLatestDataForGeostats --contract DEPLOYED_CONTRACT_ADDRESS --netw
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat getLatestDataForFire --contract DEPLOYED_CONTRACT_ADDRESS --network NETWORK_NAME
+npx hardhat getLatestDataForFire --contract DEPLOYED_CONTRACT_ADDRESS PROPERTY_ID --network NETWORK_NAME
 ```
+
+**NOTE**: Here, the PROPERTY_ID is the numeric id of the polygon against which you want to get the fire_detection data. According to the `geometry` argument passed in the `sendRequestToFire` task execution command above, the PROPERTY_ID can be either 1 or 2 (as two polygons are being passed in the request).
 
 #### Fetch the latest metadata cid (content-id) returned by the Shamba Geospatial Oracle
 
