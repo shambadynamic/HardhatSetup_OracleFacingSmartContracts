@@ -20,19 +20,19 @@ npm install
 #### Here is the list of networks supported by Shamba Geospatial Oracle and their corresponding details:
 
 ```
-Operator_Number       Network           Mainnet Block Explorer for getting API key     ETH_CHAIN_ID       Testnet Block Explorer for deployed contract
+Operator_Number       Network               ETH_CHAIN_ID        Mainnet Block Explorer for getting API key            Testnet Block Explorer for deployed contract
 
-    1              Arbitrum Rinkeby           https://arbiscan.io/myapikey                421611                https://testnet.arbiscan.io/                                 
+    1              Arbitrum Rinkeby           421611                 https://arbiscan.io/myapikey                            https://testnet.arbiscan.io/                                 
 
-    2              Avalanche Fuji             https://snowtrace.io/myapikey               43113                 https://testnet.snowtrace.io/
+    2              Avalanche Fuji             43113                  https://snowtrace.io/myapikey                           https://testnet.snowtrace.io/
 
-    3              Binance Testnet            https://bscscan.com/myapikey                97                    https://testnet.bscscan.com/
+    3              Binance Testnet            97                     https://bscscan.com/myapikey                            https://testnet.bscscan.com/
 
-    4              Ethereum Goerli            https://etherscan.io/myapikey               5                     https://goerli.etherscan.io/                          
+    4              Ethereum Goerli            5                      https://etherscan.io/myapikey                           https://goerli.etherscan.io/                          
 
-    5              Ethereum Rinkeby           https://etherscan.io/myapikey               4                     https://rinkeby.etherscan.io/
+    5              Ethereum Rinkeby           4                      https://etherscan.io/myapikey                           https://rinkeby.etherscan.io/
 
-    6              Polygon Mumbai             https://polygonscan.com/myapikey            80001                 https://mumbai.polygonscan.com/
+    6              Polygon Mumbai             80001                  https://polygonscan.com/myapikey                        https://mumbai.polygonscan.com/
 ```
 
 ### Compile the contracts
