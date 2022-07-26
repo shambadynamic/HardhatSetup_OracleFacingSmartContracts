@@ -47,9 +47,14 @@ module.exports = {
             url: process.env.QUICKNODE_BNB_TESTNET_URL,
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
             chainId: 97,
+        },
+        moonbase: {
+            url: process.env.MOONBASE_RPC_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 1287,
         }
     },
     etherscan: {
-        apiKey: process.env.BSCSCAN_API_KEY
+        apiKey: process.env.POLYGONSCAN_API_KEY
     }
 };

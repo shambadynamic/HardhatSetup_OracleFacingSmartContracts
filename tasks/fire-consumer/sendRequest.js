@@ -41,7 +41,7 @@ task("sendRequestToFire", "Sends request to Shamba Geospatial Oracle")
         const balanceHex = await linkTokenContract.balanceOf(contractAddr)
         const balance = await ethers.BigNumber.from(balanceHex._hex).toString()
 
-        if (balance < 1000000000000000000) {
+        if (balance < 1000000000000000000 && linkTokenAddress != "0x3706bdD2d30474a5069E1451AB860a2570B1c249") {
             console.log("Please fund the contract at ", contractAddr, " with 1 LINK per Oracle call")
         } else {
             //console.log(dataset_code, selected_band, image_scale, start_date, end_date, geometry)

@@ -22,6 +22,10 @@ const networkConfig = {
     97: {
         name: "testnet",
         linkToken: "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06",
+    },
+    1287: {
+        name: "moonbase",
+        linkToken: "0x3706bdD2d30474a5069E1451AB860a2570B1c249",
     }
 }
 

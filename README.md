@@ -32,7 +32,9 @@ Operator_Number       Network               ETH_CHAIN_ID        Mainnet Block Ex
 
     5              Ethereum Rinkeby           4                      https://etherscan.io/myapikey                           https://rinkeby.etherscan.io/
 
-    6              Polygon Mumbai             80001                  https://polygonscan.com/myapikey                        https://mumbai.polygonscan.com/
+    6              Moonbase Alpha             1287                   https://moonscan.io/myapikey                            https://moonbase.moonscan.io/
+
+    7              Polygon Mumbai             80001                  https://polygonscan.com/myapikey                        https://mumbai.polygonscan.com/
 ```
 
 ### Compile the contracts
@@ -125,18 +127,34 @@ npx hardhat deploy OracleFacingFireConsumer 5 --network rinkeby
 
 <br/><br/>
 
-##### To deploy on Polygon Mumbai network
+##### To deploy on Moonbase Alpha network
 
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 6 --network mumbai
+npx hardhat deploy OracleFacingGeoConsumer 6 --network moonbase
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 6 --network mumbai
+npx hardhat deploy OracleFacingFireConsumer 6 --network moonbase
+```
+
+<br/><br/>
+
+##### To deploy on Polygon Mumbai network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 7 --network mumbai
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 7 --network mumbai
 ```
 
 <br/><br/>
@@ -144,7 +162,7 @@ npx hardhat deploy OracleFacingFireConsumer 6 --network mumbai
 
 > **NOTE**: In all the commands mentioned below, replace the **DEPLOYED_CONTRACT_ADDRESS**, **OPERATOR_NUMBER** and **NETWORK_NAME** placeholders with your corresponding deployed contract address, *operator_number* as mentioned in the table given above, and the name of the network flag on which your contract is deployed, respectively. 
 
-> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4*, *5* or *6* and the corresponding **NETWORK_NAME** can be *arbitrum*, *fuji*, *testnet*, *goerli*, *rinkeby* or *mumbai*, respectively.
+> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4*, *5*, *6* or *7* and the corresponding **NETWORK_NAME** can be *arbitrum*, *fuji*, *testnet*, *goerli*, *rinkeby*, *moonbase* or *mumbai*, respectively.
 
 
 ### Verify and publish the contract on the corresponding testnet block explorer depending upon the network on which your contract is being deployed (refer to the table given above for the urls of the block explorers):
@@ -164,10 +182,13 @@ npx hardhat verify DEPLOYED_CONTRACT_ADDRESS OPERATOR_NUMBER --contract contract
 
 
 #### Fund the deployed contract with 1 LINK per Oracle request: 
-        
+
+**NOTE**: Since, no LINK faucet is available for **Moonbase Alpha** as of now, so we have removed the LINK payment requiremnet in case of **Moonbase Alpha** network, therefore you can proceed without funding the contract with LINK.
+     
 ```
 npx hardhat fund --contract DEPLOYED_CONTRACT_ADDRESS --links 1 --network NETWORK_NAME
 ```
+
 
 #### Send the request to the Shamba Geospatial Oracle by passing the required 7 parameters in case of OracleFacingGeoConsumer nad 6 parameters in case of OracleFacingFireConsumer:
 
