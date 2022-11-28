@@ -22,16 +22,8 @@ task("getLatestCidForFire", "Gets the latest cid from the ShambaFireConsumer")
         )
 
         //Get latest cid
-        const total_oracle_calls = parseInt((await fireConsumerContract.total_oracle_calls()))
-        console.log(total_oracle_calls)
-
-
-        if (total_oracle_calls == 0) {
-            console.log("No oracle call has been made yet.")
-        } else {
-            const latestCid = await fireConsumerContract.getCid(total_oracle_calls - 1)
-            console.log("Latest cid is ", latestCid)
-        }
+        const latestCid = await fireConsumerContract.getLatestCid()
+        console.log("Latest cid is ", latestCid)
 
     })
 

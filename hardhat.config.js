@@ -52,9 +52,28 @@ module.exports = {
             url: process.env.MOONBASE_RPC_URL,
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
             chainId: 1287,
+        },
+        "heco-testnet": {
+            url: process.env.HECO_TESTNET_RPC_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 256,
+        },
+        "optimistic-goerli": {
+            url: process.env.OPTIMISM_GOERLI_RPC_URL,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 420,
         }
     },
+
     etherscan: {
-        apiKey: process.env.POLYGONSCAN_API_KEY
+        apiKey: {
+            polygonMumbai: process.env.POLYGONSCAN_API_KEY
+       }
+        
     }
+    
+    // etherscan: {
+    //     apiKey: process.env.POLYGONSCAN_API_KEY_NEW
+        
+    // }
 };

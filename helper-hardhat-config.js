@@ -26,6 +26,14 @@ const networkConfig = {
     1287: {
         name: "moonbase",
         linkToken: "0x3706bdD2d30474a5069E1451AB860a2570B1c249",
+    },
+    256: {
+        name: "heco-testnet",
+        linkToken: "",
+    },
+    420: {
+        name: "optimistic-goerli",
+        linkToken: "0xdc2CC710e42857672E7907CF474a69B63B93089f",
     }
 }
 

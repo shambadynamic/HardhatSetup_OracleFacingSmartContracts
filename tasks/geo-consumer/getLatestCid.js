@@ -22,16 +22,8 @@ task("getLatestCidForGeostats", "Gets the latest cid from the ShambaGeoConsumer"
         )
 
         //Get latest cid
-        const total_oracle_calls = parseInt((await geoConsumerContract.total_oracle_calls()))
-        console.log(total_oracle_calls)
-
-
-        if (total_oracle_calls == 0) {
-            console.log("No oracle call has been made yet.")
-        } else {
-            const latestCid = await geoConsumerContract.getCid(total_oracle_calls - 1)
-            console.log("Latest cid is ", latestCid)
-        }
+        const latestCid = await geoConsumerContract.getLatestCid()
+        console.log("Latest cid is ", latestCid)
 
     })
 

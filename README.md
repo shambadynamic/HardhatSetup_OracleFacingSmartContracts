@@ -162,7 +162,7 @@ npx hardhat deploy OracleFacingFireConsumer 7 --network mumbai
 
 > **NOTE**: In all the commands mentioned below, replace the **DEPLOYED_CONTRACT_ADDRESS**, **OPERATOR_NUMBER** and **NETWORK_NAME** placeholders with your corresponding deployed contract address, *operator_number* as mentioned in the table given above, and the name of the network flag on which your contract is deployed, respectively. 
 
-> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4*, *5*, *6* or *7* and the corresponding **NETWORK_NAME** can be *arbitrum*, *fuji*, *testnet*, *goerli*, *rinkeby*, *moonbase* or *mumbai*, respectively.
+> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4*, *5*, *6* or *7* and the corresponding **NETWORK_NAME** can be *fuji*, *testnet*, *goerli*, *optimistic-goerli* or *mumbai*, respectively.
 
 
 ### Verify and publish the contract on the corresponding testnet block explorer depending upon the network on which your contract is being deployed (refer to the table given above for the urls of the block explorers):
