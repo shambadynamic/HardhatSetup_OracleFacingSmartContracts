@@ -1,6 +1,6 @@
 # Hardhat Setup for interacting with Oracle Facing Smart Contracts
 
-This project demonstrates a basic Hardhat setup for interaction with the Shamba Geospatial Oracle using the Oracle Facing Smart Contracts inheriting the Shamba Smart-Contract-Kit. 
+This project demonstrates a basic Hardhat setup for interaction with the Shamba Geospatial Oracle using the Oracle Facing Smart Contracts inheriting the [Shamba Smart-Contract-Kit](https://github.com/shambadynamic/shamba-smartcontractkit). 
 
 
 ### First install the required dependencies mentioned in package.json:
@@ -114,13 +114,13 @@ npx hardhat deploy OracleFacingFireConsumer 1287 --network moonbase
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 420 --network moonbase
+npx hardhat deploy OracleFacingGeoConsumer 420 --network optimistic-goerli
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 420 --network moonbase
+npx hardhat deploy OracleFacingFireConsumer 420 --network optimistic-goerli
 ```
 
 <br/><br/>
