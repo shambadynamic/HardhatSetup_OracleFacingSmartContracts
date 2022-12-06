@@ -20,21 +20,19 @@ npm install
 #### Here is the list of networks supported by Shamba Geospatial Oracle and their corresponding details:
 
 ```
-Operator_Number       Network               ETH_CHAIN_ID        Mainnet Block Explorer for getting API key            Testnet Block Explorer for deployed contract
+    Network               ETH_CHAIN_ID        Mainnet Block Explorer for getting API key            Testnet Block Explorer for deployed contract                                 
 
-    1              Arbitrum Rinkeby           421611                 https://arbiscan.io/myapikey                            https://testnet.arbiscan.io/                                 
+Avalanche Fuji             43113                  https://snowtrace.io/myapikey                           https://testnet.snowtrace.io/
 
-    2              Avalanche Fuji             43113                  https://snowtrace.io/myapikey                           https://testnet.snowtrace.io/
+Binance Testnet            97                     https://bscscan.com/myapikey                            https://testnet.bscscan.com/
 
-    3              Binance Testnet            97                     https://bscscan.com/myapikey                            https://testnet.bscscan.com/
+Ethereum Goerli            5                      https://etherscan.io/myapikey                           https://goerli.etherscan.io/                          
 
-    4              Ethereum Goerli            5                      https://etherscan.io/myapikey                           https://goerli.etherscan.io/                          
+Moonbase Alpha             1287                   https://moonscan.io/myapikey                            https://moonbase.moonscan.io/
 
-    5              Ethereum Rinkeby           4                      https://etherscan.io/myapikey                           https://rinkeby.etherscan.io/
+Optimism Goerli            420                    https://optimistic.etherscan.io/myapikey                https://goerli-optimism.etherscan.io
 
-    6              Moonbase Alpha             1287                   https://moonscan.io/myapikey                            https://moonbase.moonscan.io/
-
-    7              Polygon Mumbai             80001                  https://polygonscan.com/myapikey                        https://mumbai.polygonscan.com/
+Polygon Mumbai             80001                  https://polygonscan.com/myapikey                        https://mumbai.polygonscan.com/
 ```
 
 ### Compile the contracts
@@ -45,36 +43,20 @@ npx hardhat compile
 
 ### Deploy and interact with the contracts using the tasks defined in the tasks folder
 
-#### Deploy the contract on any of the five networks listed in the table above, using the corresponding contract name and operator_number parameters<br/>
-
-##### To deploy on Arbitrum Rinkeby network
-
-###### OracleFacingGeoConsumer contract:
-
-```
-npx hardhat deploy OracleFacingGeoConsumer 1 --network arbitrum
-```
-
-###### OracleFacingFireConsumer contract:
-
-```
-npx hardhat deploy OracleFacingFireConsumer 1 --network arbitrum
-```
-
-<br/><br/>
+#### Deploy the contract on any of the six networks listed in the table above, using the corresponding contract name and chain_id parameters<br/>
 
 ##### To deploy on Avalanche Fuji network
 
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 2 --network fuji
+npx hardhat deploy OracleFacingGeoConsumer 43113 --network fuji
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 2 --network fuji
+npx hardhat deploy OracleFacingFireConsumer 43113 --network fuji
 ```
 
 <br/><br/>
@@ -84,13 +66,13 @@ npx hardhat deploy OracleFacingFireConsumer 2 --network fuji
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 3 --network testnet
+npx hardhat deploy OracleFacingGeoConsumer 97 --network testnet
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 3 --network testnet
+npx hardhat deploy OracleFacingFireConsumer 97 --network testnet
 ```
 
 <br/><br/>
@@ -100,29 +82,13 @@ npx hardhat deploy OracleFacingFireConsumer 3 --network testnet
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 4 --network goerli
+npx hardhat deploy OracleFacingGeoConsumer 5 --network goerli
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 4 --network goerli
-```
-
-<br/><br/>
-
-##### To deploy on Ethereum Rinkeby network
-
-###### OracleFacingGeoConsumer contract:
-
-```
-npx hardhat deploy OracleFacingGeoConsumer 5 --network rinkeby
-```
-
-###### OracleFacingFireConsumer contract:
-
-```
-npx hardhat deploy OracleFacingFireConsumer 5 --network rinkeby
+npx hardhat deploy OracleFacingFireConsumer 5 --network goerli
 ```
 
 <br/><br/>
@@ -132,13 +98,29 @@ npx hardhat deploy OracleFacingFireConsumer 5 --network rinkeby
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 6 --network moonbase
+npx hardhat deploy OracleFacingGeoConsumer 1287 --network moonbase
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 6 --network moonbase
+npx hardhat deploy OracleFacingFireConsumer 1287 --network moonbase
+```
+
+<br/><br/>
+
+##### To deploy on Optimism Goerli network
+
+###### OracleFacingGeoConsumer contract:
+
+```
+npx hardhat deploy OracleFacingGeoConsumer 420 --network moonbase
+```
+
+###### OracleFacingFireConsumer contract:
+
+```
+npx hardhat deploy OracleFacingFireConsumer 420 --network moonbase
 ```
 
 <br/><br/>
@@ -148,21 +130,21 @@ npx hardhat deploy OracleFacingFireConsumer 6 --network moonbase
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingGeoConsumer 7 --network mumbai
+npx hardhat deploy OracleFacingGeoConsumer 80001 --network mumbai
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat deploy OracleFacingFireConsumer 7 --network mumbai
+npx hardhat deploy OracleFacingFireConsumer 80001 --network mumbai
 ```
 
 <br/><br/>
 
 
-> **NOTE**: In all the commands mentioned below, replace the **DEPLOYED_CONTRACT_ADDRESS**, **OPERATOR_NUMBER** and **NETWORK_NAME** placeholders with your corresponding deployed contract address, *operator_number* as mentioned in the table given above, and the name of the network flag on which your contract is deployed, respectively. 
+> **NOTE**: In all the commands mentioned below, replace the **DEPLOYED_CONTRACT_ADDRESS**, **CHAIN_ID** and **NETWORK_NAME** placeholders with your corresponding deployed contract address, *chain_id* as mentioned in the table given above, and the name of the network flag on which your contract is deployed, respectively. 
 
-> So, in this case, the **OPERATOR_NUMBER** can be *1*, *2*, *3*, *4*, *5*, *6* or *7* and the corresponding **NETWORK_NAME** can be *fuji*, *testnet*, *goerli*, *optimistic-goerli* or *mumbai*, respectively.
+> So, the **CHAIN_ID** can be *43113*, *97*, *5*, *1287*, *420* or *80001* and the corresponding **NETWORK_NAME** can be *fuji*, *testnet*, *goerli*, *moonbase*, *optimistic-goerli* or *mumbai*, respectively.
 
 
 ### Verify and publish the contract on the corresponding testnet block explorer depending upon the network on which your contract is being deployed (refer to the table given above for the urls of the block explorers):
@@ -170,13 +152,13 @@ npx hardhat deploy OracleFacingFireConsumer 7 --network mumbai
 ###### OracleFacingGeoConsumer contract:
 
 ```
-npx hardhat verify DEPLOYED_CONTRACT_ADDRESS OPERATOR_NUMBER --contract contracts/OracleFacingGeoConsumer.sol:OracleFacingGeoConsumer --network NETWORK_NAME
+npx hardhat verify DEPLOYED_CONTRACT_ADDRESS CHAIN_ID --contract contracts/OracleFacingGeoConsumer.sol:OracleFacingGeoConsumer --network NETWORK_NAME
 ```
 
 ###### OracleFacingFireConsumer contract:
 
 ```
-npx hardhat verify DEPLOYED_CONTRACT_ADDRESS OPERATOR_NUMBER --contract contracts/OracleFacingFireConsumer.sol:OracleFacingFireConsumer --network NETWORK_NAME
+npx hardhat verify DEPLOYED_CONTRACT_ADDRESS CHAIN_ID --contract contracts/OracleFacingFireConsumer.sol:OracleFacingFireConsumer --network NETWORK_NAME
 ```
 
 
