@@ -21,7 +21,7 @@
     "dependencies": {
         "@chainlink/contracts": "^0.4.1",
         "@openzeppelin/contracts": "^4.7.0",
-        "@shambadynamic/contracts": "^3.1.5",
+        "@shambadynamic/contracts": "^3.1.7",
         "dotenv": "^16.0.1",
         "hardhat-etherscan": "^1.0.1"
     }
