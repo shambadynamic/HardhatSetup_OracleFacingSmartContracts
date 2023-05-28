@@ -1,4 +1,8 @@
 const networkConfig = {
+    137: {
+        name: "polygon",
+        linkToken: "0xb0897686c545045aFc77CF20eC7A532E3120E0F1",
+    },
     80001: {
         name: "mumbai",
         linkToken: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
@@ -34,6 +38,10 @@ const networkConfig = {
     420: {
         name: "optimistic-goerli",
         linkToken: "0xdc2CC710e42857672E7907CF474a69B63B93089f",
+    },
+    200101: {
+        name: "milkomedaTestnet",
+        linkToken: "0x26E52c99238fea58A4AafDc1Ee3775D19BCc39fb",
     }
 }
 

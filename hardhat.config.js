@@ -18,6 +18,11 @@ module.exports = {
     },
     defaultNetwork: "mumbai",
     networks: {
+        polygon: {
+            url: process.env.ALCHEMY_POLYGON_MAINNET_URL,
+            accounts: [process.env.MAINNET_ACCOUNT_PRIVATE_KEY],
+            chainId: 137,
+        },
         mumbai: {
             url: process.env.ALCHEMY_POLYGON_URL,
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
@@ -62,18 +67,29 @@ module.exports = {
             url: process.env.OPTIMISM_GOERLI_RPC_URL,
             accounts: [process.env.ACCOUNT_PRIVATE_KEY],
             chainId: 420,
+        },
+        milkomedaTestnet: {
+            url: process.env.MILKOMEDA_C1_TESTNET_RPC,
+            accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+            chainId: 200101,
         }
     },
 
     etherscan: {
         apiKey: {
-            polygonMumbai: process.env.POLYGONSCAN_API_KEY
-       }
+            mumbai: process.env.POLYGONSCAN_API_KEY,
+            milkomedaTestnet: "abc"
+        },
+        customChains: [
+            {
+                network: "milkomedaTestnet",
+                chainId: 200101,
+                urls: {
+                  apiURL: "https://explorer-devnet-cardano-evm.c1.milkomeda.com/api",
+                  browserURL: "https://explorer-devnet-cardano-evm.c1.milkomeda.com/",
+                },
+            }
+        ]
         
     }
-    
-    // etherscan: {
-    //     apiKey: process.env.POLYGONSCAN_API_KEY_NEW
-        
-    // }
 };
